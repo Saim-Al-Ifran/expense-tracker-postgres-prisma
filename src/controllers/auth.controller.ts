@@ -30,7 +30,7 @@ export async function login(req: Request, res: Response, next: NextFunction) {
 
 export async function refresh(req: Request, res: Response, next: NextFunction) {
   try {
-    const { refreshToken } = req.body;
+    const { refreshToken } = req.cookies;
     const data = await refreshTokenService(refreshToken);
     res.json({ success: true, ...data });
   } catch (err) {
