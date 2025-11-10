@@ -34,7 +34,7 @@ const authenticate = async (req: Request, _res: Response, next: NextFunction): P
     next();
 
   } catch (err: any) {
-    console.error("JWT Auth Error:", err);
+   // console.error("JWT Auth Error:", err);
     if (err.name === 'TokenExpiredError') {
       return next(new CustomError('Token expired', 401));
     }

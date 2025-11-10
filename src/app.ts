@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import authRoutes from "./routes/auth.routes";
 import categoryRoutes from "./routes/category.routes";
+import expenseRoutes from "./routes/expense.route";
 import { errorHandler } from "./middlewares/error";
 import cookieParser from "cookie-parser";
 
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/categories", categoryRoutes); 
+app.use("/api/expenses", expenseRoutes); 
 
 app.use(errorHandler);
 
